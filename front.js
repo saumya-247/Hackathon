@@ -28,7 +28,7 @@
 
 // Firebase Config (Replace with your own)
 
-
+// Firebase Config
 const firebaseConfig = {
   apiKey: "AIzaSyCoDmlZIPcAMMJg5iz7lRIeyxfHCPcUj4M",
   authDomain: "learnx-1c84f.firebaseapp.com",
@@ -42,41 +42,96 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 
-// Modal functionality
+// Select modals
 const loginModal = document.getElementById("login-modal");
+const emailLoginModal = document.getElementById("email-login-modal");
 const openModalBtn = document.getElementById("open-login-modal");
-const closeModalBtn = document.querySelector(".close");
+const closeModalBtns = document.querySelectorAll(".close");
+const emailInput = document.getElementById("email-input");
+const passwordInput = document.getElementById("password-input");
+const errorText = document.getElementById("login-error");
 
-// Open modal
+
+// Open login modal
 openModalBtn.addEventListener("click", () => {
-  loginModal.classList.add("show");
+  loginModal.style.display = "block";
+  resetEmailLoginForm();
 });
 
-// Close modal
-closeModalBtn.addEventListener("click", () => {
-  loginModal.classList.remove("show");
+// Close modals
+closeModalBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    loginModal.style.display = "none";
+    emailLoginModal.style.display = "none";
+    resetEmailLoginForm();
+  });
+});
+
+// Open Email Login Modal
+document.getElementById("email-login").addEventListener("click", () => {
+  loginModal.style.display = "none"; // Hide main modal
+  emailLoginModal.style.display = "block"; // Show email login modal
+  resetEmailLoginForm();
+});
+
+// Email Login Handling
+document.getElementById("submit-email-login").addEventListener("click", () => {
+  const email = document.getElementById("email-input").value;
+  const password = document.getElementById("password-input").value;
+  //const errorText = document.getElementById("login-error");
+
+  if (!email || !password) {
+    showError("Both fields are required!");
+    return;
+  }
+
+  auth.signInWithEmailAndPassword(email, password)
+    .then(() => {
+      alert("Logged in successfully!");
+      emailLoginModal.style.display = "none"; // Close modal
+      resetEmailLoginForm();
+    })
+    .catch(() => {
+      showError("Invalid email or password");
+    });
 });
 
 // Google Login
 document.getElementById("google-login").addEventListener("click", () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider)
-      .then((result) => {
-          alert("Logged in as " + result.user.displayName);
-          loginModal.classList.remove("show"); // Close modal after login
-      })
-      .catch((error) => console.error(error));
+  auth.signInWithPopup(provider)
+    .then((result) => {
+      alert("Logged in as " + result.user.displayName);
+      loginModal.style.display = "none"; // Close modal after login
+    })
+    .catch((error) => console.error(error));
 });
 
-// Email Login
-document.getElementById("email-login").addEventListener("click", () => {
-  const email = prompt("Enter your email:");
-  const password = prompt("Enter your password:");
+function resetEmailLoginForm() {
+  emailInput.value = "";
+  passwordInput.value = "";
+  errorText.style.display = "none";
+  errorText.innerText = "";
+}
+// Function to show error message and clear input fields
+function showError(message) {
+  errorText.style.display = "block";
+  errorText.innerText = message;
   
-  firebase.auth().signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-          alert("Logged in successfully!");
-          loginModal.classList.remove("show");
-      })
-      .catch((error) => console.error(error));
+  // Clear fields after showing error
+  setTimeout(() => {
+    emailInput.value = "";
+    passwordInput.value = "";
+  }, 500); // Slight delay for better UX
+}
+
+// Close modal if clicked outside
+window.addEventListener("click", (event) => {
+  if (event.target === loginModal) {
+    loginModal.style.display = "none";
+  }
+  if (event.target === emailLoginModal) {
+    emailLoginModal.style.display = "none";
+    resetEmailLoginForm();
+  }
 });
