@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // let slideIndex = 0;
 // let slides = document.querySelectorAll('.slide');
 // // Function to show the slide at the specified index
@@ -26,6 +27,13 @@
 // showSlide(slideIndex);
 
 // Firebase Config
+=======
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, signInWithPopup, GoogleAuthProvider, OAuthProvider, signInWithEmailAndPassword } 
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+// Firebase Config (Replace with your own)
+>>>>>>> c7e8dd2caed83669c495661b597c80b67e30053a
 const firebaseConfig = {
   apiKey: "AIzaSyCoDmlZIPcAMMJg5iz7lRIeyxfHCPcUj4M",
   authDomain: "learnx-1c84f.firebaseapp.com",
