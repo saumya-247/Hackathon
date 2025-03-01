@@ -39,23 +39,87 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
+// firebase.initializeApp(firebaseConfig);
+// const auth = firebase.auth();
 
 // Modal functionality
-const loginModal = document.getElementById("login-modal");
-const openModalBtn = document.getElementById("open-login-modal");
-const closeModalBtn = document.querySelector(".close");
+// const loginModal = document.getElementById("login-modal");
+// const openModalBtn = document.getElementById("open-login-modal");
+// const closeModalBtn = document.querySelector(".close");
 
 // Open modal
-openModalBtn.addEventListener("click", () => {
-  loginModal.classList.add("show");
-});
+// openModalBtn.addEventListener("click", () => {
+//   loginModal.classList.add("show");
+// });
 
 // Close modal
-closeModalBtn.addEventListener("click", () => {
-  loginModal.classList.remove("show");
+// closeModalBtn.addEventListener("click", () => {
+//   loginModal.classList.remove("show");
+// });
+
+// from gpt
+// document.addEventListener("DOMContentLoaded", function() {
+//   const modal = document.getElementById("login-modal");
+//   const openModal = document.getElementById("open-modal");
+//   const closeModal = document.querySelector(".close");
+
+//   Open modal when button is clicked
+//   openModal.addEventListener("click", () => {
+//       modal.style.display = "flex";
+//   });
+
+//   Close modal when clicking "X"
+//   closeModal.addEventListener("click", () => {
+//       modal.style.display = "none";
+//   });
+
+//   Close modal when clicking outside the box
+//   window.addEventListener("click", (event) => {
+//       if (event.target === modal) {
+//           modal.style.display = "none";
+//       }
+//   });
+// });
+// to gpt
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("login-modal");
+  const closeBtn = document.querySelector(".close");
+  const googleLogin = document.getElementById("google-login");
+  const emailLogin = document.getElementById("email-login");
+
+  // Function to open the modal
+  function openModal() {
+      modal.style.display = "block";
+  }
+
+  // Function to close the modal
+  function closeModal() {
+      modal.style.display = "none";
+  }
+
+  // Close modal when clicking the close button
+  closeBtn.addEventListener("click", closeModal);
+
+  // Close modal when clicking outside of the modal content
+  window.addEventListener("click", function (event) {
+      if (event.target === modal) {
+          closeModal();
+      }
+  });
+
+  // Handle Google login button click
+  googleLogin.addEventListener("click", function () {
+      alert("Google Login Clicked");
+      // Implement Google authentication here
+  });
+
+  // Handle Email login button click
+  emailLogin.addEventListener("click", function () {
+      alert("Email Login Clicked");
+      // Implement Email login functionality here
+  });
 });
+
 
 // Google Login
 document.getElementById("google-login").addEventListener("click", () => {
