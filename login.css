@@ -59,8 +59,9 @@ input[type="text"], input[type="password"] {
 }
 
 input[type="checkbox"] {
-    margin-right: 5px;
+    margin-top: 0%;
     color: bisque;
+    display: block;
 }
 
 button {
@@ -73,6 +74,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
+    justify-content: center;
 }
 
 button1 {
@@ -105,5 +107,10 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+div{
+    font-family: 'Times New Roman', Times, serif;
+    color: #f6fdf7;
+    font-size: small;
 }
 
