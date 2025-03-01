@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECOSORT | Waste management and segregation </title>
+    <link rel="stylesheet" href="front.css">
+    <style type="text/css">
+        * {
+            text-decoration: none;
+        }
+
+        .background {
+            height: 400px;
+            width: 400px;
+            background-color: rgb(18, 114, 55);
+            width: 100%;
+            height: 500px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('bg 2.png');
+            /* Path to your image */
+            background-size: cover;
+            /* Ensures the image covers the entire background */
+            background-repeat: no-repeat;
+            /* Prevents tiling */
+            background-attachment: fixed;
+            /* Ensures the background stays in place during scroll */
+            background-position: center;
+            /* Centers the image */
+        }
+
+
+        .service-boxes {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 0;
+            margin-top: 50px;
+        }
+
+        .box {
+            background-color: #ffffff;
+            width: 30%;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .box-image1,
+        .box-image2,
+        .box-image3 {
+            background-color: rgb(84, 9, 9);
+            height: 150px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-logo">
+            <div class="logo-img">
+                <img src="logo.png" alt="Your Logo">
+            </div>
+            <button class="custom-font">ECOSORT</button>
+        </div>
+
+        <div class="nav-menu">
+            <ul>
+                <li><a href="http://localhost/homepage/front.html" class="link">Home</a></li>
+                <li><a href="http://localhost/About%20Us/About%20us.html" class="link">About Us</a></li>
+                <li><a href="http://localhost/FAQs/faqs.html" class="link">FAQs</a></li>
+                <li><a href="http://localhost/Contact/contact%20us.html" class="link">Contact Us</a></li>
+            </ul>
+        </div>
+
+
+        <nav class="nav-button">
+            <button class="btn"><a href="http://localhost/phplogin/index.php">Login</a></button>
+
+        </nav>
+    </nav>
+
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slides">
+                <!-- Each image in the slider -->
+                <div class="slide active">
+                    <img src="slide1.png" alt="Image 1">
+                </div>
+                <div class="slide">
+                    <img src="slide4.jpg" alt="Image 2">
+                </div>
+                <div class="slide">
+                    <img src="slide3.jpg" alt="Image 3">
+                </div>
+            </div>
+
+            <div class="slider-text">
+                Think of those who struggle in landfills,<br>
+                sorting through waste without choice...<br>
+                <span class="highlight">Let's segregate and dispose of it the right way!</span>
+            </div>
+
+            <!-- Navigation controls
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button> -->
+        </div>
+        <script src="front.js"></script>
+
+        <div class="form-wrapper">
+            <h1>Find Waste Management Services</h1>
+            <form action="submit.php" method="POST" class="submit-form">
+                <div class="input-box">
+                    <input type="text" name="Address" placeholder="Address" required>
+                </div>
+                <div class="input-box1">
+                    <input type="text" name="Pincode" placeholder="Pincode" required pattern="\d{6}"
+                        title="Please enter a valid 6-digit pincode">
+                </div>
+                <div class="business-options">
+                    <select name="mywork" id="work" class="work" required>
+                        <option value="">Select Waste Type</option>
+                        <option value="dry">For Dry Waste</option>
+                        <option value="wet">For Wet Waste</option>
+                        <option value="ewaste">For E-Waste</option>
+                        <option value="hazardous">For Hazardous Waste</option>
+                    </select>
+                </div>
+                <br>
+                <button type="submit" class="get-started-btn">Get Started</button>
+            </form>
+
+
+
+
+
+        </div>
+
+
+        <div class="minigame">
+            <a href="http://localhost/minigame/index.html">SortMe</a>
+        </div>
+
+
+
+        <script src="script.js"></script>
+        <div class="services-section">
+            <div class="service-box">
+                <div class="service-image"
+                    style="background-image: url('https://cdn.prod.website-files.com/6553dc578b2e6f952786cf47/6553dc578b2e6f952786d63d_Residential%20Garbage%20Collection.jpg');">
+                </div>
+                <h3>Residential Waste Pickup</h3>
+                <p>ECOSORT will link you to ideal waste disposal organizations which is the best choice for your home,
+                    and for the
+                    environtment.</p>
+            </div>
+            <div class="service-box">
+                <div class="service-image"
+                    style="background-image: url('https://cdn.prod.website-files.com/65452e132b7664a9307ee0fc/65452e132b7664a9307ee44c_Commerical%20waste%20audit.jpg');">
+                </div>
+                <h3>Commercial Waste Pickup</h3>
+                <p>ECOSORT will link you to ideal waste disposal organizations which is the best choice for your
+                    company, and for the
+                    environtment.</p>
+            </div>
+            <div class="service-box">
+                <div class="service-image"
+                    style="background-image: url('https://rekart.co.in/uploads/blog/waste-management-infographic-banner-people-260nw-1922598230-_1_.jpeg');">
+                </div>
+                <h3>Spreading Awareness</h3>
+                <p>ECOSORT will help you to enhance your knowledge about waste segregation and educate you with the best
+                    way to dispose them.</p>
+            </div>
+        </div>
+
+
+        <!-- Why Choose Ecosort Section -->
+        <section class="why-choose-us">
+            <div class="container">
+                <h2>Why Choose Ecosort?</h2>
+                <p>At Ecosort, our mission is to foster a cleaner and greener environment by empowering individuals and
+                    organizations with efficient waste segregation solutions.
+                    <br>We’ve designed our platform to make waste management simple, organized, and accessible, ensuring
+                    that anyone can contribute to a sustainable future.
+                </p>
+            </div>
+        </section>
+
+        <section class="ecosort-abbreviation">
+            <div class="abbreviation-content">
+                <h2>What Does ECOSORT Stand For?</h2>
+                <div class="abbreviation-boxes">
+                    <div class="abbreviation-box">
+                        <h3>E</h3>
+                        <p>Educating</p>
+                    </div>
+                    <div class="abbreviation-box">
+                        <h3>C</h3>
+                        <p>Communities on</p>
+                    </div>
+                    <div class="abbreviation-box">
+                        <h3>O</h3>
+                        <p>Optimized</p>
+                    </div>
+                    <div class="abbreviation-box">
+                        <h3>S</h3>
+                        <p>Sorting and</p>
+                    </div>
+                    <div class="abbreviation-box">
+                        <h3>O</h3>
+                        <p>Ongoing</p>
+                    </div>
+                    <div class="abbreviation-box">
+                        <h3>R</h3>
+                        <p>Responsive</p>
+                    </div>
+                    <div class="abbreviation-box">
+                        <h3>T</h3>
+                        <p>Trash disposal</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="dustbin-guide">
+            <h2>WASTE SORTING GUIDE</h2>
+            <div class="dustbin-container">
+                <!-- Green Bin -->
+                <div class="dustbin">
+                    <img src="green.png" alt="Green Bin">
+                    <div class="tooltip">
+                        <p>Wet Waste</p>
+                    </div>
+                </div>
+                <!-- Blue Bin -->
+                <div class="dustbin">
+                    <img src="blue.png" alt="Blue Bin">
+                    <div class="tooltip">
+                        <p>Dry Waste</p>
+                    </div>
+                </div>
+                <!-- Red Bin -->
+                <div class="dustbin">
+                    <img src="red.png" alt="Red Bin">
+                    <div class="tooltip">
+                        <p>Satnitary Waste</p>
+                    </div>
+                </div>
+                <!-- Grey Bin -->
+                <div class="dustbin">
+                    <img src="grey.png" alt="Grey Bin">
+                    <div class="tooltip">
+                        <p>E - Waste</p>
+                    </div>
+                </div>
+                <!-- Black Bin -->
+                <div class="dustbin">
+                    <img src="black.png" alt="Black Bin">
+                    <div class="tooltip">
+                        <p>Hazardous Waste</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 ECOSORT. All Rights Reserved.</p>
+                <p>Designed by Our Team</p>
+            </div>
+        </footer>
+</body>
+
+</html>
