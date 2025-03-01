@@ -1,4 +1,4 @@
-var counter = -1;
+var counter = -1 ;
 var counter_arr = 0;
 var pushcount = 0;
 var popcount = 0;
@@ -66,7 +66,7 @@ function pop() {
     } else {
       document.getElementById("popped").innerHTML = arr[counter];
       document.getElementById("pushed").innerHTML = "";
-      arr.pop();
+      arr.dequeue();
     }
     $("#r" + counter + 1).remove();
     $("#a" + counter).remove();
