@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DSA Learning Platform | Master Data Structures and Algorithms</title>
     <link rel="stylesheet" href="front.css">
- 
+
 </head>
 
 <body>
@@ -30,14 +30,28 @@
 
             <div id="login-modal" class="modal">
                 <div class="modal-content">
-                  <span class="close">&times;</span>
-                  <h2>Select a Login Method</h2>
-                  <div><button  id="google-login">Login with Google</button></div>
-                  <div><p>or</p></div>
-                  <div><button id="email-login">Login with Email</button></div>
-                  
+                    <span class="close">&times;</span>
+                    <h2>Select a Login Method</h2>
+                    <div><button id="google-login">Login with Google</button></div>
+                    <div>
+                        <p>or</p>
+                    </div>
+                    <div><button id="email-login">Login with Email</button></div>
+
                 </div>
-              </div>
+            </div>
+
+            <!-- Email Login Modal -->
+            <div id="email-login-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="close-email-modal">&times;</span>
+                    <h2>Email Login</h2>
+                    <input type="email" id="email-input" placeholder="Enter your email">
+                    <input type="password" id="password-input" placeholder="Enter your password">
+                    <button id="submit-email-login">Login</button>
+                    <p id="login-error" style="color: red; display: none;">Invalid email or password</p>
+                </div>
+            </div>
         </nav>
     </nav>
    
@@ -72,8 +86,10 @@
 
     <div class="slider-container">
         <div class="slider-text">
-            Data Structures and Algorithms (DSA) help in organizing data efficiently and solving problems optimally. <br>
-            Strong DSA skills are essential for coding interviews, competitive programming, and building scalable applications. .<br>
+            Data Structures and Algorithms (DSA) help in organizing data efficiently and solving problems optimally.
+            <br>
+            Strong DSA skills are essential for coding interviews, competitive programming, and building scalable
+            applications. .<br>
             <span class="highlight">Let's Code and Learn DSA the right way!</span>
         </div>
     </div>
@@ -85,12 +101,15 @@
             <p>Learn about the Stack data structure, its operations, and real-world applications.</p>
         </div>
         <div class="service-box">
-            <div class="service-image" style="background-image: url('[CTDL]\ Priority\ Queue\ -\ Hàng\ đợi\ ưu\ tiên\ »\ Cafedev_vn.jpg');"></div>
+            <div class="service-image"
+                style="background-image: url('[CTDL]\ Priority\ Queue\ -\ Hàng\ đợi\ ưu\ tiên\ »\ Cafedev_vn.jpg');">
+            </div>
             <h3>Queue</h3>
             <p>Understand the Queue data structure, its types, and how it is used in algorithms.</p>
         </div>
         <div class="service-box">
-            <div class="service-image" style="background-image: url('What\ is\ a\ singly\ linked\ list\ in\ C_.jpg');"></div>
+            <div class="service-image" style="background-image: url('What\ is\ a\ singly\ linked\ list\ in\ C_.jpg');">
+            </div>
             <h3>Linked List</h3>
             <p>Master Linked Lists, their variations, and how to implement them in your code.</p>
         </div>
@@ -125,7 +144,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-    
+
     <script type="module" src="front.js"></script>
 
 </body>

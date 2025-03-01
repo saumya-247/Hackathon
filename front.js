@@ -28,7 +28,7 @@
 
 // Firebase Config (Replace with your own)
 
-
+// Firebase Config
 const firebaseConfig = {
   apiKey: "AIzaSyCoDmlZIPcAMMJg5iz7lRIeyxfHCPcUj4M",
   authDomain: "learnx-1c84f.firebaseapp.com",
@@ -42,105 +42,97 @@ const firebaseConfig = {
 // firebase.initializeApp(firebaseConfig);
 // const auth = firebase.auth();
 
-// Modal functionality
-// const loginModal = document.getElementById("login-modal");
-// const openModalBtn = document.getElementById("open-login-modal");
-// const closeModalBtn = document.querySelector(".close");
+// Select modals
+const loginModal = document.getElementById("login-modal");
+const emailLoginModal = document.getElementById("email-login-modal");
+const openModalBtn = document.getElementById("open-login-modal");
+const closeModalBtns = document.querySelectorAll(".close");
+const emailInput = document.getElementById("email-input");
+const passwordInput = document.getElementById("password-input");
+const errorText = document.getElementById("login-error");
 
-// Open modal
-// openModalBtn.addEventListener("click", () => {
-//   loginModal.classList.add("show");
-// });
 
-// Close modal
-// closeModalBtn.addEventListener("click", () => {
-//   loginModal.classList.remove("show");
-// });
+// Open login modal
+openModalBtn.addEventListener("click", () => {
+  loginModal.style.display = "block";
+  resetEmailLoginForm();
+});
 
-// from gpt
-// document.addEventListener("DOMContentLoaded", function() {
-//   const modal = document.getElementById("login-modal");
-//   const openModal = document.getElementById("open-modal");
-//   const closeModal = document.querySelector(".close");
+// Close modals
+closeModalBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    loginModal.style.display = "none";
+    emailLoginModal.style.display = "none";
+    resetEmailLoginForm();
+  });
+});
 
-//   Open modal when button is clicked
-//   openModal.addEventListener("click", () => {
-//       modal.style.display = "flex";
-//   });
+// Open Email Login Modal
+document.getElementById("email-login").addEventListener("click", () => {
+  loginModal.style.display = "none"; // Hide main modal
+  emailLoginModal.style.display = "block"; // Show email login modal
+  resetEmailLoginForm();
+});
 
-//   Close modal when clicking "X"
-//   closeModal.addEventListener("click", () => {
-//       modal.style.display = "none";
-//   });
+// Email Login Handling
+document.getElementById("submit-email-login").addEventListener("click", () => {
+  const email = document.getElementById("email-input").value;
+  const password = document.getElementById("password-input").value;
+  //const errorText = document.getElementById("login-error");
 
-//   Close modal when clicking outside the box
-//   window.addEventListener("click", (event) => {
-//       if (event.target === modal) {
-//           modal.style.display = "none";
-//       }
-//   });
-// });
-// to gpt
-document.addEventListener("DOMContentLoaded", function () {
-  const modal = document.getElementById("login-modal");
-  const closeBtn = document.querySelector(".close");
-  const googleLogin = document.getElementById("google-login");
-  const emailLogin = document.getElementById("email-login");
-
-  // Function to open the modal
-  function openModal() {
-      modal.style.display = "block";
+  if (!email || !password) {
+    showError("Both fields are required!");
+    return;
   }
 
-  // Function to close the modal
-  function closeModal() {
-      modal.style.display = "none";
-  }
-
-  // Close modal when clicking the close button
-  closeBtn.addEventListener("click", closeModal);
-
-  // Close modal when clicking outside of the modal content
-  window.addEventListener("click", function (event) {
-      if (event.target === modal) {
-          closeModal();
-      }
-  });
-
-  // Handle Google login button click
-  googleLogin.addEventListener("click", function () {
-      alert("Google Login Clicked");
-      // Implement Google authentication here
-  });
-
-  // Handle Email login button click
-  emailLogin.addEventListener("click", function () {
-      alert("Email Login Clicked");
-      // Implement Email login functionality here
-  });
+  auth.signInWithEmailAndPassword(email, password)
+    .then(() => {
+      alert("Logged in successfully!");
+      emailLoginModal.style.display = "none"; // Close modal
+      resetEmailLoginForm();
+    })
+    .catch(() => {
+      showError("Invalid email or password");
+    });
 });
 
 
 // Google Login
 document.getElementById("google-login").addEventListener("click", () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider)
-      .then((result) => {
-          alert("Logged in as " + result.user.displayName);
-          loginModal.classList.remove("show"); // Close modal after login
-      })
-      .catch((error) => console.error(error));
+  auth.signInWithPopup(provider)
+    .then((result) => {
+      alert("Logged in as " + result.user.displayName);
+      loginModal.style.display = "none"; // Close modal after login
+    })
+    .catch((error) => console.error(error));
 });
 
-// Email Login
-document.getElementById("email-login").addEventListener("click", () => {
-  const email = prompt("Enter your email:");
-  const password = prompt("Enter your password:");
+function resetEmailLoginForm() {
+  emailInput.value = "";
+  passwordInput.value = "";
+  errorText.style.display = "none";
+  errorText.innerText = "";
+}
+// Function to show error message and clear input fields
+function showError(message) {
+  errorText.style.display = "block";
+  errorText.innerText = message;
   
-  firebase.auth().signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-          alert("Logged in successfully!");
-          loginModal.classList.remove("show");
-      })
-      .catch((error) => console.error(error));
+  // Clear fields after showing error
+  setTimeout(() => {
+    emailInput.value = "";
+    passwordInput.value = "";
+  }, 500); // Slight delay for better UX
+}
+
+// Close modal if clicked outside
+window.addEventListener("click", (event) => {
+  if (event.target === loginModal) {
+    loginModal.style.display = "none";
+  }
+  if (event.target === emailLoginModal) {
+    emailLoginModal.style.display = "none";
+    resetEmailLoginForm();
+  }
 });
