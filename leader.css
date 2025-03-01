@@ -75,10 +75,13 @@ th {
 tr:nth-child(even) {
     background-color: #a5a5a5;
 }
-
-tr:hover {
-    background-color: #b3aaaa;
+tr:nth-child(odd) {
+    background-color: #a5a5a5;
 }
+
+/* tr:hover {
+    background-color: #b3aaaa;
+} */
 
 /* Badge Styling */
 .badge {
