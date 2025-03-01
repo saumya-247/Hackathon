@@ -39,8 +39,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
+// firebase.initializeApp(firebaseConfig);
+// const auth = firebase.auth();
 
 // Select modals
 const loginModal = document.getElementById("login-modal");
@@ -95,6 +95,7 @@ document.getElementById("submit-email-login").addEventListener("click", () => {
       showError("Invalid email or password");
     });
 });
+
 
 // Google Login
 document.getElementById("google-login").addEventListener("click", () => {
