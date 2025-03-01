@@ -27,8 +27,7 @@
 // showSlide(slideIndex);
 
 // Firebase Config (Replace with your own)
-
-// Firebase Config
+// Firebase Config// Firebase Config
 const firebaseConfig = {
   apiKey: "AIzaSyCoDmlZIPcAMMJg5iz7lRIeyxfHCPcUj4M",
   authDomain: "learnx-1c84f.firebaseapp.com",
@@ -39,10 +38,10 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
-// const auth = firebase.auth();
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
 
-// Select modals
+// Select modals and inputs
 const loginModal = document.getElementById("login-modal");
 const emailLoginModal = document.getElementById("email-login-modal");
 const openModalBtn = document.getElementById("open-login-modal");
@@ -51,11 +50,10 @@ const emailInput = document.getElementById("email-input");
 const passwordInput = document.getElementById("password-input");
 const errorText = document.getElementById("login-error");
 
-
-// Open login modal
+// Open main login modal
 openModalBtn.addEventListener("click", () => {
   loginModal.style.display = "block";
-  resetEmailLoginForm();
+  resetEmailLoginForm(); // Ensure form is cleared when opening
 });
 
 // Close modals
@@ -71,14 +69,13 @@ closeModalBtns.forEach(btn => {
 document.getElementById("email-login").addEventListener("click", () => {
   loginModal.style.display = "none"; // Hide main modal
   emailLoginModal.style.display = "block"; // Show email login modal
-  resetEmailLoginForm();
+  resetEmailLoginForm(); // Clear previous inputs and error messages
 });
 
 // Email Login Handling
 document.getElementById("submit-email-login").addEventListener("click", () => {
-  const email = document.getElementById("email-input").value;
-  const password = document.getElementById("password-input").value;
-  //const errorText = document.getElementById("login-error");
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
 
   if (!email || !password) {
     showError("Both fields are required!");
@@ -89,13 +86,12 @@ document.getElementById("submit-email-login").addEventListener("click", () => {
     .then(() => {
       alert("Logged in successfully!");
       emailLoginModal.style.display = "none"; // Close modal
-      resetEmailLoginForm();
+      resetEmailLoginForm(); // Reset form
     })
     .catch(() => {
       showError("Invalid email or password");
     });
 });
-
 
 // Google Login
 document.getElementById("google-login").addEventListener("click", () => {
@@ -108,12 +104,14 @@ document.getElementById("google-login").addEventListener("click", () => {
     .catch((error) => console.error(error));
 });
 
+// Function to clear input fields and errors
 function resetEmailLoginForm() {
   emailInput.value = "";
   passwordInput.value = "";
   errorText.style.display = "none";
   errorText.innerText = "";
 }
+
 // Function to show error message and clear input fields
 function showError(message) {
   errorText.style.display = "block";
