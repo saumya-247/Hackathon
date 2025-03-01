@@ -2,10 +2,9 @@
 body, html {
     margin: 0;
     padding: 0;
-    height: 50%;
+    height: 100%; /* Changed to 100% to ensure full height */
     font-family: 'Times New Roman', Times, serif;
     overflow: hidden;
-    top:10px ;
 }
 
 /* Background Image */
@@ -31,11 +30,11 @@ body, html {
     background: repeating-linear-gradient(40deg, #08060a, #222325 100%);
     padding: 30px;
     border-radius: 20px;
-    box-shadow:10px 10px 10px  rgb(193, 193, 46);
+    box-shadow: 10px 10px 10px rgb(193, 193, 46);
     border-color: aliceblue;
     max-width: 600px;
     width: 90%;
-    max-height: 400px;
+    max-height: 400px; /* Fixed height for the container */
     text-align: center;
 }
 
@@ -47,18 +46,16 @@ h1 {
 
 /* Scrollable Table Container */
 .table-container {
-    max-height: 400px; /* Set a fixed height for the scrollable area */
+    max-height: 300px; /* Fixed height for the scrollable area */
     overflow-y: auto; /* Enable vertical scrolling */
     border-radius: 10px;
     margin-top: 20px;
-    border-radius: 20px;
 }
 
 /* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
-   
 }
 
 th, td {
@@ -73,18 +70,14 @@ th {
     position: sticky;
     top: 0; /* Make the header sticky */
     z-index: 1;
-    border-radius: 20px;
-   
 }
 
 tr:nth-child(even) {
     background-color: #a5a5a5;
-    border-radius: 20px;
 }
 
 tr:hover {
     background-color: #b3aaaa;
-    border-radius: 20px;
 }
 
 /* Badge Styling */
