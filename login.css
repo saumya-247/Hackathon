@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    background: url('https://i.pinimg.com/736x/82/71/2f/82712f0751c548b4b4243136144098b0.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background: rgba(0, 0, 128, 0.8);
+    border-radius: 10px;
+    padding: 2rem;
+    width: 300px;
+    text-align: center;
+    border-color: 1px 1px 1px black;
+    
+        position: relative;
+        left: 250px; /* Moves the box 50px to the right */
+    
+    
+    box-shadow: 10px 10px 10px rgb(132, 132, 132);
+}
+
+h1 {
+    color: rgb(171, 58, 58);
+    margin-bottom: 1rem;
+    text-shadow: 5cap;
+    text-align: center;
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 1px 1px 1px #f6fdf7;
+}
+
+h3 {
+    color: lightgray;
+    margin-bottom: 1rem;
+    font-size: medium;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    color: antiquewhite;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+    color: bisque;
+}
+
+button {
+    width: 30%;
+    height: 50%;
+    padding: 2px;
+    background-color: #43a547;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button1 {
+    width: 50%;
+    height: 1%;
+    padding: px;
+    background-color: #8a948a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+  
+}
+
+
+button:hover {
+    background-color: #9e9e9e;
+}
+
+p {
+    margin-top: 1rem;
+    color: white;
+}
+
+a {
+    color: lightblue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
