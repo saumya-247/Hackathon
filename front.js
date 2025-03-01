@@ -31,12 +31,12 @@ from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 // Firebase Config (Replace with your own)
 const firebaseConfig = {
-  apiKey: "YOUR_FIREBASE_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCoDmlZIPcAMMJg5iz7lRIeyxfHCPcUj4M",
+  authDomain: "learnx-1c84f.firebaseapp.com",
+  projectId: "learnx-1c84f",
+  storageBucket: "learnx-1c84f.appspot.com",
+  messagingSenderId: "907250901075",
+  appId: "1:907250901075:web:ff45b6eeaaadbba47ae6a6"
 };
 
 // Initialize Firebase
