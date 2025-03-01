@@ -4,7 +4,7 @@
     <link rel="shortcut icon" type="png" href="images/icon/favicon.png">
   <title>Implementation Of Stack Using Array</title>
   <script src="jquery.3.5.1.min.js"></script>
-  <script src="stack.js"></script>
+  <script src="Queue.js"></script>
   <link rel="stylesheet" href="stack.css">
 </head>
 
@@ -42,7 +42,68 @@
         Control section is dragable , so you can move the entire control box
         with it .
       </li>
-    </ul>
+    </ul><!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Queue Simulation</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>Queue Simulation</h1>
+            <div id="current_algo"></div>
+            <input type="text" id="enqueue-item" placeholder="Enter item to enqueue">
+            <button onclick="enqueue()">Enqueue</button>
+            <button onclick="dequeue()">Dequeue</button>
+            <button onclick="isEmpty()">Is Empty?</button>
+            <button onclick="peek()">Peek</button>
+            <button id="launch">Instructions</button>
+            <div id="queue"></div>
+            <div id="pointer"></div>
+            <div id="pushed"></div>
+            <div id="dequeued"></div>
+            <div id="top_element"></div>
+        </div>
+    
+        <!-- Modals for questions -->
+        <div id="enqueueModal" class="modal">
+            <span class="close close-enqueue">&times;</span>
+            <div class="modal-content">
+                <p>Question about Enqueue</p>
+                <div id="option-a">Option A</div>
+                <div id="option-b">Option B</div>
+                <div id="option-c">Option C</div>
+                <div id="option-d">Option D</div>
+            </div>
+        </div>
+    
+        <div id="dequeueModal" class="modal">
+            <span class="close close-dequeue">&times;</span>
+            <div class="modal-content">
+                <p>Question about Dequeue</p>
+                <div id="pop-a">Option A</div>
+                <div id="pop-b">Option B</div>
+                <div id="pop-c">Option C</div>
+                <div id="pop-d">Option D</div>
+            </div>
+        </div>
+    
+        <div id="emptyModal" class="modal">
+            <span class="close close-empty">&times;</span>
+            <div class="modal-content">
+                <p>Question about Is Empty</p>
+                <div id="empty-a">Option A</div>
+                <div id="empty-b">Option B</div>
+                <div id="empty-c">Option C</div>
+                <div id="empty-d">Option D</div>
+            </div>
+        </div>
+    
+        <script src="queue.js"></script>
+    </body>
+    </html>
     <!-- Actions -->
     <div class="btn-container">
       <a href="#input">
