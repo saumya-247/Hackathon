@@ -25,23 +25,19 @@
 
 // showSlide(slideIndex);
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth, signInWithPopup, GoogleAuthProvider, OAuthProvider, signInWithEmailAndPassword } 
-from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-// Firebase Config (Replace with your own)
+// Firebase Config
 const firebaseConfig = {
-  apiKey: "YOUR_FIREBASE_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCoDmlZIPcAMMJg5iz7lRIeyxfHCPcUj4M",
+  authDomain: "learnx-1c84f.firebaseapp.com",
+  projectId: "learnx-1c84f",
+  storageBucket: "learnx-1c84f.appspot.com",
+  messagingSenderId: "907250901075",
+  appId: "1:907250901075:web:ff45b6eeaaadbba47ae6a6"
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
 
 // Modal functionality
 const loginModal = document.getElementById("login-modal");
@@ -60,24 +56,13 @@ closeModalBtn.addEventListener("click", () => {
 
 // Google Login
 document.getElementById("google-login").addEventListener("click", () => {
-  const provider = new GoogleAuthProvider();
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      alert("Logged in as " + result.user.displayName);
-      loginModal.classList.remove("show"); // Close modal after login
-    })
-    .catch((error) => console.error(error));
-});
-
-// Apple Login
-document.getElementById("apple-login").addEventListener("click", () => {
-  const provider = new OAuthProvider("apple.com");
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      alert("Logged in as " + result.user.displayName);
-      loginModal.classList.remove("show");
-    })
-    .catch((error) => console.error(error));
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+      .then((result) => {
+          alert("Logged in as " + result.user.displayName);
+          loginModal.classList.remove("show"); // Close modal after login
+      })
+      .catch((error) => console.error(error));
 });
 
 // Email Login
@@ -85,11 +70,10 @@ document.getElementById("email-login").addEventListener("click", () => {
   const email = prompt("Enter your email:");
   const password = prompt("Enter your password:");
   
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      alert("Logged in successfully!");
-      loginModal.classList.remove("show");
-    })
-    .catch((error) => console.error(error));
+  firebase.auth().signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+          alert("Logged in successfully!");
+          loginModal.classList.remove("show");
+      })
+      .catch((error) => console.error(error));
 });
-

@@ -1,6 +1,6 @@
 /* Login button , with google,email or apple */
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 50%;
@@ -12,12 +12,12 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-  }
-  
-  /* Show modal when active */
-  .modal.show {
-    display: block;
-  }
+}
+
+/* Ensure modal appears when .show is added */
+.modal.show {
+    display: block !important;
+}
   
   /* Close button */
   .close {
