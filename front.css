@@ -72,6 +72,60 @@ html, body {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(255, 208, 0, 0.4);
 }
+/* Dropdown Menu Styling */
+.dropdown {
+    position: relative; /* Required for positioning the dropdown */
+}
+
+.dropdown-content {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    top: 100%; /* Position below the "Learning" link */
+    left: 0;
+    background: linear-gradient(145deg, #252525, #1f1f1f); /* Match the nav background */
+    min-width: 160px; /* Minimum width of the dropdown */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 10px #181818, -5px -5px 10px #2c2c2cd8; /* Match the nav shadow */
+    z-index: -1; /* Ensure dropdown appears above other content */
+    padding: 10px 0; /* Add padding for spacing */
+}
+
+.dropdown-content li {
+    list-style: none; /* Remove default list styling */
+    margin: 0; /* Remove default margin */
+    
+    
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 10px 20px;
+    color: #FFFF00; /* Yellow text color */
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+   
+    
+}
+
+.dropdown-content li a:hover {
+    color: rgb(255, 208, 0); /* Brighter yellow on hover */
+    background-color: #333; /* Darker background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    z-index: 1;
+}
+
+/* Optional: Show dropdown on click (for mobile-friendly behavior) */
+.dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
 
 /* Modal Styling */
 .modal {

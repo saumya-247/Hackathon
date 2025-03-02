@@ -123,6 +123,24 @@ function showError(message) {
     passwordInput.value = "";
   }, 500); // Slight delay for better UX
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdown = document.querySelector(".dropdown");
+  dropdown.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent default link behavior
+      const dropdownContent = this.querySelector(".dropdown-content");
+      dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  // Get the "Log Out" button
+  const logoutButton = document.getElementById("open-login-modal");
+
+  // Add a click event listener to the button
+  logoutButton.addEventListener("click", function () {
+      // Redirect to login.html
+      window.location.href = "login.html";
+  });
+});
 
 // Close modal if clicked outside
 window.addEventListener("click", (event) => {
