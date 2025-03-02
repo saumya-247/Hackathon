@@ -131,16 +131,8 @@ document.addEventListener("DOMContentLoaded", function () {
       dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
   });
 });
-document.addEventListener("DOMContentLoaded", function () {
-  // Get the "Log Out" button
-  const logoutButton = document.getElementById("open-login-modal");
 
-  // Add a click event listener to the button
-  logoutButton.addEventListener("click", function () {
-      // Redirect to login.html
-      window.location.href = "login.html";
-  });
-});
+
 
 // Close modal if clicked outside
 window.addEventListener("click", (event) => {
