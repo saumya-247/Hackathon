@@ -322,6 +322,7 @@ html, body {
 
 /* Abbreviation Section */
 .ecosort-abbreviation {
+    
     background: linear-gradient(145deg, #222, #1a1a1a);
     padding: 50px 20px;
     text-align: center;
@@ -334,6 +335,7 @@ html, body {
     font-size: 28px;
     margin-bottom: 30px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+   
 }
 
 .abbreviation-boxes {
