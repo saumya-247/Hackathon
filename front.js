@@ -131,16 +131,8 @@ document.addEventListener("DOMContentLoaded", function () {
       dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
   });
 });
-document.addEventListener("DOMContentLoaded", function () {
-  // Get the "Log Out" button
-  const logoutButton = document.getElementById("open-login-modal");
 
-  // Add a click event listener to the button
-  logoutButton.addEventListener("click", function () {
-      // Redirect to login.html
-      window.location.href = "login.html";
-  });
-});
+
 
 // Close modal if clicked outside
 window.addEventListener("click", (event) => {
@@ -152,3 +144,19 @@ window.addEventListener("click", (event) => {
     resetEmailLoginForm();
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const loginButton = document.getElementById("login-btn"); // Change to your actual login button ID
+
+  // ✅ Check if user came from sign-up
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("fromSignup")) {
+      loginButton.classList.add("highlight-login");
+
+      // ✅ Remove highlight after 3 seconds
+      setTimeout(() => {
+          loginButton.classList.remove("highlight-login");
+      }, 3000);
+  }
+});
+  

@@ -369,6 +369,17 @@ html, body {
     font-size: 18px;
 }
 
+@keyframes jump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .highlight-login {
+    animation: jump 0.5s ease-in-out 3;
+    background-color: yellow; /* Highlight effect */
+  }
+  
+
 /* Footer */
 .footer {
     background: linear-gradient(145deg, #222, #1a1a1a);
