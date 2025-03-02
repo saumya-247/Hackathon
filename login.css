@@ -58,11 +58,11 @@ input[type="text"], input[type="password"] {
     color: antiquewhite;
 }
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
     margin-top: 0%;
     color: bisque;
     display: block;
-}
+} */
 
 button {
     width: 30%;
