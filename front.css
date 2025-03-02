@@ -26,7 +26,10 @@ html, body {
     background: linear-gradient(145deg, #222, #1a1a1a);
     box-shadow: 5px 5px 10px #181818, -5px -5px 10px #2c2c2cd8;
 }
-
+.nav .inner-nav
+{
+    display: flex;
+}
 .nav-logo img {
     height: 50px;
     filter: drop-shadow(2px 2px 5px rgba(255, 208, 0, 0.5));
@@ -175,9 +178,9 @@ html, body {
 }
 
 .slider-text {
-    font-size: 14px;
+    font-size: 20px;
     color: #FFFF00;
-    line-height: 1.6;
+    line-height: 2.0;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -250,6 +253,7 @@ html, body {
 }
 
 .service-box h3 {
+    text-decoration: none;
     color: #FFFF00;
     font-size: 22px;
     margin-bottom: 10px;
@@ -321,6 +325,9 @@ html, body {
 .footer-content p {
     color: #999;
     font-size: 16px;
+}
+.service-box h3{
+    text-decoration: none;
 }
 
 /* Responsive Design */
