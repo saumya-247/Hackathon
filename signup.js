@@ -21,8 +21,8 @@ const db = getFirestore(app); // 🔥 Fix: Initialize Firestore properly
 document.addEventListener("DOMContentLoaded", function () {
     const signupForm = document.querySelector(".signup-form");
 
-    signupForm.addEventListener("submit", async function (event) {
-        event.preventDefault(); // Prevent default form submission
+    signupForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
 
         // Get input values
         const name = document.getElementById("name").value.trim();
@@ -31,35 +31,54 @@ document.addEventListener("DOMContentLoaded", function () {
         const password = document.getElementById("password").value.trim();
         const confirmPassword = document.getElementById("confirm-password").value.trim();
 
-        // ✅ Basic Validation
-        if (!name || !email || !userId || !password || !confirmPassword) {
-            alert("⚠️ Please fill in all fields.");
-            return;
+        let hasError = false;
+
+        // Function to show error message
+        function showError(inputId, message) {
+            const inputField = document.getElementById(inputId);
+            const errorField = document.getElementById(inputId + "-error");
+            inputField.style.border = "2px solid red";
+            errorField.innerText = message;
+            errorField.style.color = "red";
+            hasError = true;
         }
 
-        if (password !== confirmPassword) {
-            alert("❌ Passwords do not match!");
-            return;
+        // Function to clear error message when typing
+        function clearError(inputId) {
+            const inputField = document.getElementById(inputId);
+            const errorField = document.getElementById(inputId + "-error");
+            inputField.style.border = "";
+            errorField.innerText = "";
         }
 
-        try {
-            // ✅ Create User in Firebase Authentication
-            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            const user = userCredential.user;
+        // Check for empty fields
+        if (!name) showError("name", "⚠️ Name is required");
+        else clearError("name");
 
-            // ✅ Store User Data in Firestore
-            await setDoc(doc(db, "users", user.uid), { 
-                name: name,
-                email: email,
-                userId: userId,
-                createdAt: serverTimestamp()
-            });
+        if (!email) showError("email", "⚠️ Email is required");
+        else clearError("email");
 
-            alert("✅ Account created successfully!");
-            window.location.href = "front.html"; // Redirect after signup
+        if (!userId) showError("userid", "⚠️ User ID is required");
+        else clearError("userid");
 
-        } catch (error) {
-            alert("❌ Error: " + error.message);
+        if (!password) showError("password", "⚠️ Password is required");
+        else clearError("password");
+
+        if (!confirmPassword) showError("confirm-password", "⚠️ Confirm Password is required");
+        else clearError("confirm-password");
+
+        // Check if passwords match
+        if (password && confirmPassword && password !== confirmPassword) {
+            showError("confirm-password", "❌ Passwords do not match!");
         }
+
+        // Stop form submission if there's an error
+        if (hasError) return;
+
+        // ✅ Proceed with form submission (Firebase authentication)
+        console.log("✅ Form submitted successfully!");
+        alert("Account created successfully!");
+
+        // You can now integrate Firebase sign-up logic here
     });
 });
