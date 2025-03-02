@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 // ✅ Ensure Firebase is properly initialized before using Firestore
 if (!firebase.apps.length) {
     firebase.initializeApp({
@@ -11,6 +12,8 @@ if (!firebase.apps.length) {
     });
 }
 =======
+=======
+>>>>>>> Stashed changes
 // // Sample leaderboard data
 // let leaderboardData = [
 //     { name: "Alice", score: 9500 },
@@ -19,6 +22,22 @@ if (!firebase.apps.length) {
 //     { name: "Diana", score: 7800 },
 //     { name: "Eve", score: 7500 },
 // ];
+<<<<<<< Updated upstream
+=======
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCoDmlZIPcAMMJg5iz7lRIeyxfHCPcUj4M",
+    authDomain: "learnx-1c84f.firebaseapp.com",
+    projectId: "learnx-1c84f",
+    storageBucket: "learnx-1c84f.appspot.com",
+    messagingSenderId: "907250901075",
+    appId: "1:907250901075:web:ff45b6eeaaadbba47ae6a6"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+>>>>>>> Stashed changes
 
 const firebaseConfig = {
     apiKey: "AIzaSyCoDmlZIPcAMMJg5iz7lRIeyxfHCPcUj4M",
@@ -72,7 +91,11 @@ function populateLeaderboard() {
             row.innerHTML = `
                 <td>${index}</td>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                  <td>${data.name}</td>
+=======
+                <td>${data.name}</td>
+>>>>>>> Stashed changes
 =======
                 <td>${data.name}</td>
 >>>>>>> Stashed changes
