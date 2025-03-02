@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face {
+    font-family: myFont;
+    src: url("C:\Users\GAURI\Downloads\Demo-The-Seasons\Demo_Fonts\Fontspring-DEMO-theseasons-bd.otf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8; /* Light blue-gray background */
+    margin: 0;
+}
+
+.footer {
+    background: #1a2025;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.custom-font {
+    font-family: myFont;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 15%;
+    line-height: 100px;
+    background: linear-gradient(to right, #2c3e50, #3498db); /* Dark blue gradient */
+    z-index: 100;
+}
+
+.nav-logo {
+    position: relative;
+    top: 15px;
+    margin-right: 180px;
+}
+
+.nav-logo button {
+    color: #3498db; /* Blue color */
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    border: none;
+    outline: none;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nav-menu ul {
+    display: flex;
+}
+
+.nav-menu ul li {
+    list-style-type: none;
+}
+
+.nav-menu ul li .link {
+    text-decoration: none;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    padding-bottom: 15px;
+    margin: 0 25px;
+    padding: 20px 20px;
+    font-size: larger;
+    font-weight: 500;
+}
+
+.link:hover, .active {
+    border-bottom: 3px solid rgb(255, 255, 255);
+}
+
+.nav-button .btn {
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: #fff;
+    border-radius: 30px;
+    border: 0;
+    transition: .2s ease-in;
+    align-items: center;
+    margin-left: 180px;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.start_btn {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    transform: translate(-50%, -50%);
+}
+
+.start_btn button {
+    background: #2c3e50; /* Dark blue */
+    font-size: 25px;
+    font-weight: 300;
+    padding: 10px 50px;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    transition: .2s ease-out;
+}
+
+.start_btn button:hover {
+    background: #34495e; /* Slightly lighter blue */
+}
+
+.rules {
+    position: absolute;
+    background: #ffffff;
+    width: 800px;
+    top: 20%;
+    border-radius: 5px;
+}
+
+.rules .rules_list {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding: 0 50px;
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+}
+
+.rules .list {
+    padding: 20px 50px 30px 50px;
+}
+
+.rules .list .info {
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+.rules .list .info span {
+    font-weight: 600;
+    color: #3498db; /* Blue color */
+}
+
+#quiz-container {
+    background: white;
+    padding: 20px;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#question {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#options {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    padding: 10px;
+    margin: 10px 185px;
+    background: #3498db; /* Blue color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: #2980b9; /* Darker blue */
+}
+
+.hide {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#result-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#answers-container {
+    list-style: none;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+#score {
+    padding: 10px 10px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#message {
+    padding: 15px 15px 15px;
+}
+
+#retry {
+    background: #2c3e50; /* Dark blue */
+    font-size: 15px;
+    font-weight: 300;
+    width: 100px;
+    padding: 10px 30px;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .2s ease-out;
+    margin-right: 20px;
+}
+
+#exit {
+    background: #2c3e50; /* Dark blue */
+    font-size: 15px;
+    font-weight: 300;
+    width: 100px;
+    padding: 10px 30px;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .2s ease-out;
+}
+
+.answers {
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
+    color: #fdfdfd;
+    background: #3498db; /* Blue color */
+    font-size: large;
+    cursor: pointer;
+    transition: .2s ease-in;
+    font-weight: 600;
+}
+
+.answers:hover {
+    background-color: #2980b9; /* Darker blue */
+}
+
+#timer {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #2c3e50; /* Dark blue */
+}

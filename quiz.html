@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+   
+    <div class="start_btn">
+        <button>Start</button>
+    </div>
+    <div class="rules">
+        <div class="rules_list">
+            <span>Listen!! So about the game...</span>
+        </div>
+        <div class="list">
+            <div class="info">1. There are 7 questions in total.</div>
+            <div class="info">2. For each question you will get <span>15seconds</span> to answer.</div>
+            <div class="info">3. You cannot reselect once you have selected an option so chose wisely!</div>
+            <div class="info">4. You cannot exit in between the game.</div>
+            <div class="info">&nbsp;&nbsp;&nbsp; Stay committed and see your game through to completion without giving up.</div>
+            <div class="info">5. At last, your scoreboard will be visible to you.</div>
+        </div>
+    </div>
+    <div id="quiz-container" class="hide">
+        <div id="question-container">
+            <div id="question">Question text</div>
+            <div id="options">
+                <button class="option">Option 1</button>
+                <button class="option">Option 2</button>
+                <button class="option">Option 3</button>
+                <button class="option">Option 4</button>
+            </div>
+        </div>
+        <div id="result-container" class="hide">
+            <div id="score">Your score: 0</div>
+            <div id="message">Hope you had a nice time!</div>
+            <button id="retry">Retry</button>
+            <button id="exit">Exit</button>
+            
+            <!-- Hidden section for displaying answers -->
+            <div id="answers-container" class="hide">
+                <h2>Correct Answers:</h2>
+                <li id="answers-list">
+                    <!-- Answers will be added here -->
+                </li>
+            </div>
+            <div id="message">Cannot remember the question? Click here to learn more.</div>
+            <button class="answers"><a href="QnA.html">Show QnA</a></button>
+        </div>
+        <div id="timer">Time left: 15s</div>
+    </div>
+    <script src="quiz.js"></script>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; DSA LEARNING PLATFORM.</p>
+            <p>Designed by Our Team</p>
+        </div>
+    </footer>
+</body>
+
+</html>
