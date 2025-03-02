@@ -1,0 +1,110 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Changed to 100% to ensure full height */
+    font-family: 'Times New Roman', Times, serif;
+    overflow: hidden;
+}
+
+/* Background Image */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.pinimg.com/736x/56/cf/72/56cf724c3d95104617f6a1d1e7814c86.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+/* Leaderboard Container */
+.leaderboard-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: repeating-linear-gradient(40deg, #08060a, #222325 100%);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgb(193, 193, 46);
+    /* box-shadow: -10px -10px 10px rgb(16, 125, 20);
+    box-shadow: 0px -10px 10px rgb(16, 125, 20); */
+    border-color: aliceblue;
+    max-width: 600px;
+    width: 90%;
+    max-height: 400px; /* Fixed height for the container */
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fefbfbdd;
+}
+
+/* Scrollable Table Container */
+.table-container {
+    max-height: 300px; /* Fixed height for the scrollable area */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #092139;
+    color: rgb(158, 153, 153);
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0; /* Make the header sticky */
+    z-index: 1;
+}
+
+tr:nth-child(even) {
+    background-color: #a5a5a5;
+}
+tr:nth-child(odd) {
+    background-color: #a5a5a5;
+}
+
+/* tr:hover {
+    background-color: #b3aaaa;
+} */
+
+/* Badge Styling */
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.badge.gold {
+    background-color: gold;
+    color: #333;
+}
+
+.badge.silver {
+    background-color: silver;
+    color: #333;
+}
+
+.badge.bronze {
+    background-color: #cd7f32;
+    color: #333;
+}

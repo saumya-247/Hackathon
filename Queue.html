@@ -23,10 +23,10 @@
         steps and operations are listed below
       </p>
       <li class="list-items">
-        Adding an element onto the stack (enqueue operation)
+        Adding an element onto the stack (push operation)
       </li>
       <li class="list-items">
-        Deletion of an element from a stack (dequeue operation)
+        Deletion of an element from a stack (Pop operation)
       </li>
       <li class="list-items">
         Visiting each element of the stack (Peek operation)
@@ -42,68 +42,7 @@
         Control section is dragable , so you can move the entire control box
         with it .
       </li>
-    </ul><!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Queue Simulation</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="wrapper">
-            <h1>Queue Simulation</h1>
-            <div id="current_algo"></div>
-            <input type="text" id="enqueue-item" placeholder="Enter item to enqueue">
-            <button onclick="enqueue()">Enqueue</button>
-            <button onclick="dequeue()">Dequeue</button>
-            <button onclick="isEmpty()">Is Empty?</button>
-            <button onclick="peek()">Peek</button>
-            <button id="launch">Instructions</button>
-            <div id="queue"></div>
-            <div id="pointer"></div>
-            <div id="pushed"></div>
-            <div id="dequeued"></div>
-            <div id="top_element"></div>
-        </div>
-    
-        <!-- Modals for questions -->
-        <div id="enqueueModal" class="modal">
-            <span class="close close-enqueue">&times;</span>
-            <div class="modal-content">
-                <p>Question about Enqueue</p>
-                <div id="option-a">Option A</div>
-                <div id="option-b">Option B</div>
-                <div id="option-c">Option C</div>
-                <div id="option-d">Option D</div>
-            </div>
-        </div>
-    
-        <div id="dequeueModal" class="modal">
-            <span class="close close-dequeue">&times;</span>
-            <div class="modal-content">
-                <p>Question about Dequeue</p>
-                <div id="pop-a">Option A</div>
-                <div id="pop-b">Option B</div>
-                <div id="pop-c">Option C</div>
-                <div id="pop-d">Option D</div>
-            </div>
-        </div>
-    
-        <div id="emptyModal" class="modal">
-            <span class="close close-empty">&times;</span>
-            <div class="modal-content">
-                <p>Question about Is Empty</p>
-                <div id="empty-a">Option A</div>
-                <div id="empty-b">Option B</div>
-                <div id="empty-c">Option C</div>
-                <div id="empty-d">Option D</div>
-            </div>
-        </div>
-    
-        <script src="queue.js"></script>
-    </body>
-    </html>
+    </ul>
     <!-- Actions -->
     <div class="btn-container">
       <a href="#input">
@@ -117,7 +56,7 @@
     <div id="container">
       <!-- ======= This is Canvas area ========= -->
       <div id="canvas" class="box box-full">
-        <h2 style="text-align: center;">Implementation Of Queue Using Array</h2>
+        <h2 style="text-align: center;">Implementation Of Stack Using Array</h2>
 
         <!-- Canvas Element to draw Animations -->
         <div id="canvas-wrapper">
@@ -129,7 +68,7 @@
             <div id="lowerbound">
               <div id="stack-wrapper">
                 <div id="stack"></div>
-                <span style="position:relative; display: block; font-size: 16px; margin: 10px 70px;">Queue</span>
+                <span style="position:relative; display: block; font-size: 16px; margin: 10px 70px;">Stack</span>
               </div>
 
               <!-- =============== current step explanation =============== -->
@@ -225,6 +164,6 @@
   </div>
 </body>
 <script src="js/jquery-3.5.1.min.js"></script>
-<script src="js/script.js"></script>
+<script src="js/Queue.js"></script>
 
 </html>
