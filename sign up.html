@@ -1,35 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="sign up.css">
     <title>Sign Up</title>
+    <style>
+        /* Back Button Styling */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Back Button -->
+    <a href="index.html" class="back-button">← Back to Home</a>
+
     <div class="background">
         <div class="container">
             <form class="signup-form">
                 <h1>SIGN UP</h1>
                 <p>CREATE YOUR ACCOUNT</p>
+
                 <label for="name">Name</label>
                 <input type="text" id="name" required>
-                
+
                 <label for="email">E-mail</label>
                 <input type="email" id="email" required>
-                
+
                 <label for="userid">User-ID</label>
                 <input type="text" id="userid" required>
-                
+
                 <label for="password">Password</label>
                 <input type="password" id="password" required>
-                
+
                 <label for="confirm-password">Confirm Password</label>
                 <input type="password" id="confirm-password" required>
-                
+
                 <button type="submit">SIGN UP</button>
             </form>
         </div>
     </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+    <!-- Custom Script -->
+    <script type="module" src="signup.js"></script>
+
+
 </body>
+
 </html>

@@ -4,14 +4,15 @@
     position: fixed;
     z-index: 1000;
     left: 50%;
-    top: 50%;
+    top: 30%;
     transform: translate(-50%, -50%);
     width: 300px;
-    background: white;
+    background: rgb(28, 18, 118);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
   }
   
   /* Show modal when active */
@@ -22,8 +23,8 @@
   /* Close button */
   .close {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 1px;
+    right: 10px;
     font-size: 20px;
     cursor: pointer;
   }
@@ -192,6 +193,17 @@ body {
 .abbreviation-box p {
     font-size: 1rem;
 }
+
+@keyframes jump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .highlight-login {
+    animation: jump 0.5s ease-in-out 3;
+    background-color: yellow; /* Highlight effect */
+  }
+  
 
 /* Footer */
 .footer {

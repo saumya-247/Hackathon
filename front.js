@@ -134,3 +134,19 @@ window.addEventListener("click", (event) => {
     resetEmailLoginForm();
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const loginButton = document.getElementById("login-btn"); // Change to your actual login button ID
+
+  // ✅ Check if user came from sign-up
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("fromSignup")) {
+      loginButton.classList.add("highlight-login");
+
+      // ✅ Remove highlight after 3 seconds
+      setTimeout(() => {
+          loginButton.classList.remove("highlight-login");
+      }, 3000);
+  }
+});
+  
