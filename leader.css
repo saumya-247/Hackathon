@@ -31,6 +31,8 @@ body, html {
     padding: 30px;
     border-radius: 20px;
     box-shadow: 10px 10px 10px rgb(193, 193, 46);
+    /* box-shadow: -10px -10px 10px rgb(16, 125, 20);
+    box-shadow: 0px -10px 10px rgb(16, 125, 20); */
     border-color: aliceblue;
     max-width: 600px;
     width: 90%;
